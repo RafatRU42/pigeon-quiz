@@ -1,6 +1,18 @@
 .home{
-
+    background-color: rgb(240, 238, 238);
+    
 }
 .home img{
     height: 250px;
+    border-radius: 10px;
+}
+.text-section{
+    border: 1px solid gainsboro;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+}
+.text{
+    margin-left: 80px;
 }
