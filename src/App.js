@@ -7,6 +7,7 @@ import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
 import Topic from './components/Topic/Topic';
 
+
 function App() {
   const router = createBrowserRouter([
     {path:'/', element: <Main></Main>, children:[
@@ -15,7 +16,8 @@ function App() {
       {path: '/statistics',element: <Statistics></Statistics>},
       {path: 'topic', element: <Topic></Topic>},
       {path: '/blog', element: <Blog></Blog>}
-    ]}
+    ]},
+    {path:'*',element: <h1>Please Input a Valid URL</h1>}
   ])
   return (
     <div className="App">
