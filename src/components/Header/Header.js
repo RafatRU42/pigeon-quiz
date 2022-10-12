@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-const Header = () => {
+const Header = ({data}) => {
     return (
         <div className='header'>
             <div className="title">
@@ -15,9 +15,9 @@ const Header = () => {
             </div>
             <div className="links">
                 <Link to = {'/home'}>Home</Link>
-                <Link to = {'/home'}>Topic</Link>
+                <Link to = {'/home'}></Link>
                 <Link to = {'/Statistics'}>Statistics</Link>
-                <Link to = {'/quiz'}>Quiz</Link>
+                {/* <Link to = {`/topic/${data.id}`}>Quiz</Link> */}
 
                 <Link to = {'/blog'}>Blog</Link>
             </div>

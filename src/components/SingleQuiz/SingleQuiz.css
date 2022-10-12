@@ -1,0 +1,27 @@
+.style{
+    font-style: oblique;
+}
+.border{
+    border: 1px solid gainsboro;
+    background-color: white;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.border button{
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(227, 230, 230);
+    width: 300px;
+}
+.border button:hover{
+    background-color: forestgreen;
+}
+.eye:hover{
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}

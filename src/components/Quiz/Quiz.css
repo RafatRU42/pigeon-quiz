@@ -1,4 +1,7 @@
 .quizes{
     text-align: start;
-    margin-left: 40px;
+    background-color: rgb(235, 238, 241);
+}
+.name{
+    text-align: center;
 }

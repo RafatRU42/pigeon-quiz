@@ -17,6 +17,7 @@ function App() {
       {path: '/statistics',element: <Statistics></Statistics>},
       {path: 'topic', element: <Topic></Topic>},
       {path: '/blog', element: <Blog></Blog>},
+      {path: '/quiz', element: <Quiz></Quiz>},
       {path: '/topic/:topicId',loader: async({params}) =>{
         // console.log(params)
         return fetch(` https://openapi.programming-hero.com/api/quiz/${params.topicId}`)

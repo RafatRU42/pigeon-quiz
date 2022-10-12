@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import pic from '../../profile.jpg'
+import Quiz from '../Quiz/Quiz';
 import Statistics from '../Statistics/Statistics';
 import Topic from '../Topic/Topic';
 import './home.css'
@@ -25,7 +26,7 @@ const Home = () => {
            <div className="rafat">
       
           {
-            quiz.data.map(data=> <Topic key ={data.id} data ={data}></Topic>)
+            quiz.data.map(data=> <Topic key ={data.id} data ={data}></Topic>,)
           }
            </div>
         </div>
