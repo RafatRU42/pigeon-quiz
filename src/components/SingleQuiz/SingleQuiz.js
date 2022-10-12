@@ -3,6 +3,8 @@ import Option from '../Option/Option';
 import './SingleQuiz.css'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingleQuiz = ({quiz}) => {
 
@@ -42,6 +44,17 @@ document.getElementById('para').innerText = correct;
         }
     }
 
+
+    function App(){
+        const secondChacker = () => toast("Wow so easy!");
+    
+        return (
+          <div>
+            <button onClick={secondChacker}>Notify!</button>
+            <ToastContainer />
+          </div>
+        );
+      }
 
     
     return (
