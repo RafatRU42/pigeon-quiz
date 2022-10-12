@@ -19,3 +19,10 @@
     padding-left: 40px;
     padding-right: 40px;
 }
+
+@media screen and (max-width: 786px) {
+    .header{
+        display: block;
+    }
+    
+}

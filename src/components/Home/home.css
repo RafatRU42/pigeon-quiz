@@ -21,3 +21,13 @@
     display: flex;
     margin-left: 20px;
 }
+
+@media screen and (max-width:786px) {
+    .rafat{
+        display: block;
+    }
+
+    .text-section{
+        display: block;
+    }
+}

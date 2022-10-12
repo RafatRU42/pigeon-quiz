@@ -7,6 +7,9 @@ import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
 import Topic from './components/Topic/Topic';
 import Quiz from './components/Quiz/Quiz';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {

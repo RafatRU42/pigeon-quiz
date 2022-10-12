@@ -1,3 +1,36 @@
+Firstly, I Change the favicon and named the page Pigeon IT Center. Than I add a navbar at the top of the webPage. And The navbar linked with the Routes.
+
+Second, I have rendered the data which has given by the programming hero github. Then rendered Four types of topic.
+
+Third, In the webpage there have declared a component which is rendered for the quiz section.
+
+Fourth, I use Fontawesome for take a font. 
+
+Fifth, There have no use of any kind of CSS framework. I used custom CSS.
+
+Seventh, I have commited more than 10 times.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

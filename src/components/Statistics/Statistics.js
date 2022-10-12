@@ -1,10 +1,26 @@
 import React from 'react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+const data = [
+    {name: 'React', uv: 8, pv: 2400, amt: 2400},
+    {name: 'JavaScript', uv: 9, pv: 2400, amt: 2400},
+    {name: 'CSS', uv: 8, pv: 2400, amt: 2400},
+    {name: 'github', uv: 11, pv: 2400, amt: 2400},
+];
+
 
 const Statistics = () => {
     
     return (
         <div>
-            <h1>This is Statistics</h1>
+           const renderBarChart = (
+  <BarChart width={600} height={300} data={data}>
+    <XAxis dataKey="name" stroke="#8884d8" />
+    <YAxis />
+    <Tooltip />
+    <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+    <Bar dataKey="uv" fill="#8884d8" barSize={30} />
+  </BarChart>
+);
         </div>
     );
 };

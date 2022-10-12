@@ -24,38 +24,46 @@ document.getElementById('para').innerText = correct;
     const optionChacker = (quiz)=>{
         console.log('optionChacker', quiz)
         if(quiz.correctAnswer === quiz.options[0]){
-            console.log('Your answer is correct')
+            alert('Your answer is correct')
         }
         // else if(quiz.correctAnswer === quiz.options[1]){
         //     console.log('Your Answer is correct')
         // }
         
         else{
-            console.log('Your answer is wrong')
+            alert('Your answer is wrong')
         }
     }
 
     const secondChacker= (quiz) =>{
-        if(quiz.correctAnswer === quiz.options){
-            console.log('Your Answer is Right')
+        if(quiz.correctAnswer === quiz.options[1]){
+           alert('Your Answer is Right')
         }
         else{
-            console.log('Your answer is wrong')
+            alert('Your answer is wrong')
         }
     }
 
 
-    function App(){
-        const secondChacker = () => toast("Wow so easy!");
-    
-        return (
-          <div>
-            <button onClick={secondChacker}>Notify!</button>
-            <ToastContainer />
-          </div>
-        );
-      }
+    const thirdChacker = () =>{
+        if(quiz.correctAnswer===quiz.options[2]){
+                alert('Your Answer is Correct')
+        }
+        else{
+            alert('Your answer is Wrong')
+        }
+    }
 
+    const fourthChacker = () =>{
+        if(quiz.correctAnswer===quiz.options[3]){
+            alert('Your answer is correct')
+        }
+        else{
+            alert('Your answer is wrong')
+        }
+    }
+
+ 
     
     return (
         <div className='border'>
@@ -69,6 +77,7 @@ document.getElementById('para').innerText = correct;
 
             <button onClick={()=>optionChacker(quiz)}>
             <h2>1.{quiz.options[0]}</h2>
+            
 
             </button>
             <button onClick={()=>secondChacker(quiz)}>
@@ -77,9 +86,9 @@ document.getElementById('para').innerText = correct;
             </button>
             <button>
                 
-            <h2>3.{quiz.options[2]}</h2>
+            <h2 onClick={(()=>thirdChacker(quiz))}>3.{quiz.options[2]}</h2>
             </button>
-            <button>
+            <button onClick={()=>fourthChacker(quiz)}>
                 
             <h2>4.{quiz.options[3]}</h2>
             </button>
