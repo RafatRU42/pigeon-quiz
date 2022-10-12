@@ -25,7 +25,7 @@ const Home = () => {
            <div className="rafat">
       
           {
-            quiz.data.map(data=> <Topic data ={data}></Topic>)
+            quiz.data.map(data=> <Topic key ={data.id} data ={data}></Topic>)
           }
            </div>
         </div>
