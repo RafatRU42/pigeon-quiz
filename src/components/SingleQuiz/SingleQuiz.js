@@ -1,99 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Option from '../Option/Option';
 import './SingleQuiz.css'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
+import ReactModal from 'react-modal';
 
-const SingleQuiz = ({quiz}) => {
-
-
- const correctAnswer = (quiz) =>{
-// console.log('correct answer is ',quiz)
-const correct = quiz.correctAnswer;
-alert( correct)
-document.getElementById('para').innerText = correct;
- }
-
-    
-    // console.log('rafat',quiz)
+// import { toast } from 'react-hot-toast';
 
 
 
-    const optionChacker = (quiz)=>{
-        console.log('optionChacker', quiz)
-        if(quiz.correctAnswer === quiz.options[0]){
-            alert('Your answer is correct')
-        }
-        // else if(quiz.correctAnswer === quiz.options[1]){
-        //     console.log('Your Answer is correct')
-        // }
-        
-        else{
-            alert('Your answer is wrong')
-        }
+
+
+
+
+const SingleQuiz = ({ quiz }) => {
+  const [clickedOption, setClickedOption] = useState(null);
+  const [answerClicked, setAnswerClicked] = useState(false);
+
+  const correctAnswer = () => {
+    toast.success('Correct Answer: ' + quiz.correctAnswer);
+  };
+
+  const optionChecker = (option) => {
+    if (answerClicked) return; // Prevent further clicks after an answer is clicked
+
+    setAnswerClicked(true);
+    setClickedOption(option);
+
+    if (option === quiz.correctAnswer) {
+      toast.success('Your Answer is correct.');
+    } else {
+      toast.error('Your Answer Is Wrong');
     }
+  };
 
-    const secondChacker= (quiz) =>{
-        if(quiz.correctAnswer === quiz.options[1]){
-           alert('Your Answer is Right')
-        }
-        else{
-            alert('Your answer is wrong')
-        }
-    }
+  const isOptionCorrect = (option) => option === quiz.correctAnswer;
+  const isOptionDisabled = () => answerClicked;
 
+  return (
+  <div>
+      <div className='border'>
+      <div className="flex">
+        <h1 className='style'>Question: {quiz.question}</h1>
+        <FontAwesomeIcon onClick={correctAnswer} className='eye' icon={faEye} />
+      </div>
 
-    const thirdChacker = () =>{
-        if(quiz.correctAnswer===quiz.options[2]){
-                alert('Your Answer is Correct')
-        }
-        else{
-            alert('Your answer is Wrong')
-        }
-    }
-
-    const fourthChacker = () =>{
-        if(quiz.correctAnswer===quiz.options[3]){
-            alert('Your answer is correct')
-        }
-        else{
-            alert('Your answer is wrong')
-        }
-    }
-
- 
-    
-    return (
-        <div className='border'>
-            <div className="flex">
-            <h1 className='style'>Question: {quiz.question} 
-            {/* {<p id='para'></p>} */}
-            </h1>
-
-            <FontAwesomeIcon onClick={()=>correctAnswer(quiz)} className='eye' icon={faEye}></FontAwesomeIcon>
-            </div>
-
-            <button onClick={()=>optionChacker(quiz)}>
-            <h2>1.{quiz.options[0]}</h2>
-            
-
-            </button>
-            <button onClick={()=>secondChacker(quiz)}>
-                
-            <h2>2.{quiz.options[1]}</h2>
-            </button>
-            <button>
-                
-            <h2 onClick={(()=>thirdChacker(quiz))}>3.{quiz.options[2]}</h2>
-            </button>
-            <button onClick={()=>fourthChacker(quiz)}>
-                
-            <h2>4.{quiz.options[3]}</h2>
-            </button>
-        </div>
-    );
+      <button onClick={() => optionChecker(quiz.options[0])} disabled={isOptionDisabled()}>
+        <h2 style={{ color: clickedOption === quiz.options[0] ? (isOptionCorrect(quiz.options[0]) ? 'green' : 'red') : 'inherit' }}>1. {quiz.options[0]}</h2>
+      </button>
+      <button onClick={() => optionChecker(quiz.options[1])} disabled={isOptionDisabled()}>
+        <h2 style={{ color: clickedOption === quiz.options[1] ? (isOptionCorrect(quiz.options[1]) ? 'green' : 'red') : 'inherit' }}>2. {quiz.options[1]}</h2>
+      </button>
+      <button onClick={() => optionChecker(quiz.options[2])} disabled={isOptionDisabled()}>
+        <h2 style={{ color: clickedOption === quiz.options[2] ? (isOptionCorrect(quiz.options[2]) ? 'green' : 'red') : 'inherit' }}>3. {quiz.options[2]}</h2>
+      </button>
+      <button onClick={() => optionChecker(quiz.options[3])} disabled={isOptionDisabled()}>
+        <h2 style={{ color: clickedOption === quiz.options[3] ? (isOptionCorrect(quiz.options[3]) ? 'green' : 'red') : 'inherit' }}>4. {quiz.options[3]}</h2>
+      </button>
+    </div>
+  </div>
+  );
 };
 
 export default SingleQuiz;
+
+

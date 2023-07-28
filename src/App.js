@@ -7,8 +7,9 @@ import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
 import Topic from './components/Topic/Topic';
 import Quiz from './components/Quiz/Quiz';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -29,7 +30,8 @@ function App() {
     {path:'*',element: <h1>Please Input a Valid URL</h1>}
   ])
   return (
-    <div className="App">
+    <div className="App"> 
+    <Toaster></Toaster>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );

@@ -5,3 +5,14 @@
 .name{
     text-align: center;
 }
+
+.quiz{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    size: 50px;
+    font-size: large;
+    margin-bottom: 30px;
+    cursor: pointer;
+    color: green;
+}
