@@ -7,10 +7,10 @@ const Topic = ({data}) => {
     return (
         <div className='topic'>
            <div className="single-topic">
-           <img src={logo} alt="" />
-            <h3>{name}</h3>
-            <h4>Total Question: {total}</h4>
-           <button className='button'><Link to ={`/topic/${id}`}>Start Quiz</Link></button>
+           <img className='h-[300px] w-full' src={logo} alt="" />
+            <h3 className='text-xl text-center font-bold '>{name}</h3>
+            <h4 className='text-xl'>Total Question: {total}</h4>
+        <Link className='w-full mt-4 text-white font-bold btn btn-success' to ={`/topic/${id}`}>Start Quiz</Link>
 
            </div>
 

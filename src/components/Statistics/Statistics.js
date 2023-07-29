@@ -9,18 +9,26 @@ const data = [
 
 
 const Statistics = () => {
+
+  const renderBarChart = (
+    <BarChart width={600} height={300} data={data}>
+      <XAxis dataKey="name" stroke="#8884d8" />
+      <YAxis />
+      <Tooltip />
+      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+      <Bar dataKey="uv" fill="#8884d8" barSize={30} />
+    </BarChart>
+  );
     
     return (
         <div>
-           const renderBarChart = (
-  <BarChart width={600} height={300} data={data}>
-    <XAxis dataKey="name" stroke="#8884d8" />
-    <YAxis />
-    <Tooltip />
-    <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-    <Bar dataKey="uv" fill="#8884d8" barSize={30} />
-  </BarChart>
-);
+          <div>
+            <p className='text-center text-2xl font-bold my-8'>Our Students' average marks on the quiz</p>
+          </div>
+          <div className='mx-auto'>
+          {renderBarChart}
+
+          </div>
         </div>
     );
 };

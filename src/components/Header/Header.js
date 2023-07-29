@@ -6,20 +6,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-const Header = ({data}) => {
+const Header = ({ data }) => {
     return (
-        <div className='header'>
-            <div className="title">
-                
-                <h1> <FontAwesomeIcon icon={faDove}></FontAwesomeIcon> Pigeon IT Center</h1>
-            </div>
-            <div className="links">
-                <Link to = {'/home'}>Home</Link>
-                <Link to = {'/home'}></Link>
-                <Link to = {'/Statistics'}>Statistics</Link>
-                {/* <Link to = {`/topic/${data.id}`}>Quiz</Link> */}
+        <div className='bg-blue-300 flex justify-between p-5 text-white'>
+            <div className="">
 
-                <Link to = {'/blog'}>Blog</Link>
+                <h1 className='font-bold text-2xl'> <FontAwesomeIcon icon={faDove}></FontAwesomeIcon> Pigeon IT Center</h1>
+            </div>
+            <div className="">
+                <Link className='p-3 font-bold text-lg' to={'/home'}>Home</Link>
+                <Link className='p-3 font-bold text-lg' to={'/home'}></Link>
+                <Link className='p-3 font-bold text-lg' to={'/quizRoute'}>Quiz</Link>
+                <Link className='p-3 font-bold text-lg' to={'/Statistics'}>Statistics</Link>
+                <Link className='p-3 font-bold text-lg' to={'/blog'}>Blog</Link>
             </div>
         </div>
     );

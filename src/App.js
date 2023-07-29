@@ -10,6 +10,7 @@ import Quiz from './components/Quiz/Quiz';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import toast, { Toaster } from 'react-hot-toast';
+import QuizRoute from './QuizRoute/QuizRoute';
 
 
 
@@ -18,6 +19,7 @@ function App() {
     {path:'/', element: <Main></Main>, children:[
       {path: '/',loader: async () => fetch('https://openapi.programming-hero.com/api/quiz'),element: <Home></Home>},
       {path: '/home',loader: async () => fetch('https://openapi.programming-hero.com/api/quiz'), element: <Home></Home>},
+      {path: '/quizRoute',loader:async () => fetch('https://openapi.programming-hero.com/api/quiz'),element: <QuizRoute></QuizRoute>},
       {path: '/statistics',element: <Statistics></Statistics>},
       {path: 'topic', element: <Topic></Topic>},
       {path: '/blog', element: <Blog></Blog>},

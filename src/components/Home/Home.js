@@ -6,32 +6,48 @@ import Statistics from '../Statistics/Statistics';
 import Topic from '../Topic/Topic';
 import './home.css'
 import toast, { Toaster } from 'react-hot-toast';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+import "react-awesome-slider/dist/styles.css";
+
+
 
 const Home = () => {
-    const quiz = useLoaderData();
-    console.log('quiz',quiz.data)
-    return (
-        <div className='home'>
-            <h1>Welcome To Our Page</h1>
-          
+  const quiz = useLoaderData();
 
-            <div className="text-section">
-            <img src={pic} alt="" />
-                <div className="text">
-                    <h2>Our Schooling and Your Victory...</h2>
-                    <hr />
 
-                    <h3>We live in the age of Science and Technology. Without Technological knowledge no one can take his proper position in this modern world. Day by day the importance of the knowledge of science and tecnology is increasing. So, Take the IT knowledge and be advanced in today's world.Best wishes. Fiamanillah... </h3>
-                </div>
-            </div>
-           <div className="rafat">
-      
-          {
-            quiz.data.map(data=> <Topic key ={data.id} data ={data}></Topic>,)
-          }
-           </div>
-        </div>
-    );
+  // const slider = (
+  //     <AwesomeSlider >
+  //       <div data-src="https://i.ibb.co/mHtSwZy/image-1.jpg" />
+  //       <div data-src="https://i.ibb.co/mHtSwZy/image-1.jpghttps://i.ibb.co/R7Nk1GL/21235128.jpg" />
+  //       <div data-src="https://i.ibb.co/mHtSwZy/image-1.jpg" />
+  //     </AwesomeSlider>
+  //   );
+
+
+  return (
+    <div className='home'>
+     
+
+      <div>
+
+
+  
+      </div>
+
+      <div className=''>
+      <img  className=' w-full' src="https://i.ibb.co/T0JwSqs/1.jpg" alt="" />
+
+      </div>
+
+      <div className="rafat">
+
+        {
+          quiz.data.map(data => <Topic key={data.id} data={data}></Topic>,)
+        }
+      </div>
+    </div>
+  );
 };
 
 export default Home;
